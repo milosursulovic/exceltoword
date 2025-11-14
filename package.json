@@ -1,0 +1,18 @@
+{
+  "name": "drive-download-20251114t174437z-1-001",
+  "version": "1.0.0",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "docxtemplater": "^3.67.4",
+    "pizzip": "^3.2.0",
+    "undici-types": "^7.16.0",
+    "xlsx": "^0.18.5"
+  }
+}
