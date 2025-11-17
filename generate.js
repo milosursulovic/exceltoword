@@ -91,6 +91,8 @@ firstSheetRows.forEach((row, index) => {
   const rowSheet2 = secondByDosije.get(dosije) || {};
   const rowSheet3 = thirdByDosije.get(dosije) || {};
 
+  const JMBG = String(rowSheet2.JMBG || "").trim();
+
   const data = {
     Ime: ime,
     Prezime: prezime,
@@ -106,10 +108,10 @@ firstSheetRows.forEach((row, index) => {
         ? "Заспленој"
         : "",
 
-    BrojRada: rowSheet2.BrojRada || "",
+    BrojRada: String(rowSheet2.BrojRada || "").trim(),
 
-    UgovorORaduBroj: rowSheet3.UgovorORaduBroj || "",
-    UgovorORaduDatum: rowSheet3.UgovorORaduDatum || "",
+    UgovorORaduBroj: String(rowSheet3.UgovorORaduBroj || "").trim(),
+    UgovorORaduDatum: String(rowSheet3.UgovorORaduDatum || "").trim(),
   };
 
   const zip = new PizZip(templateBinary);
@@ -125,8 +127,9 @@ firstSheetRows.forEach((row, index) => {
 
   const safeIme = ime || "BezImena";
   const safePrezime = prezime || "BezPrezimena";
+  const safeJMBG = JMBG || "BezJMBG";
 
-  const fileName = `output_${safeIme}_${safePrezime}.docx`;
+  const fileName = `${safeJMBG}_${safeIme}_${safePrezime}.docx`;
   const outputPath = path.join(outputFolder, fileName);
 
   fs.writeFileSync(outputPath, buf);
