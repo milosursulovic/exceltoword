@@ -108,8 +108,6 @@ firstSheetRows.forEach((row, index) => {
         ? "Заспленој"
         : "",
 
-    BrojRada: String(rowSheet2.BrojRada || "").trim(),
-
     UgovorORaduBroj: String(rowSheet3.UgovorORaduBroj || "").trim(),
     UgovorORaduDatum: String(rowSheet3.UgovorORaduDatum || "").trim(),
   };
